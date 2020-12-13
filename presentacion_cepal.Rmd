@@ -667,7 +667,7 @@ cortes %>%
 
 ```
 
-### Si clasificamos el 5% a mano, mejoramos aproximadamente 3 pp
+### Si clasificamos el 5% a mano, mejoramos más de 3 pp
 
 ---
 background-image: url("imagenes/fondo2.PNG")
@@ -759,7 +759,7 @@ Analizamos los registros de actividad económica a lo largo de varios meses
 
 
 .center[
-<img src="imagenes/palabras_glosa.png" width="400" />
+<img src="imagenes/palabras_glosa.png" width="600" />
 ]
 
 --
@@ -774,9 +774,10 @@ background-position: 100% 0%
 # Cambios en el registro
 
 .center[
-<img src="imagenes/riqueza_lexica.png" width="400" />
+<img src="imagenes/riqueza_lexica.png" width="600" />
 ]
 
+## Menor variedad de palabras
 
 ---
 background-image: url("imagenes/fondo2.PNG")
@@ -786,19 +787,18 @@ background-position: 100% 0%
 # Cambios en el registro
 
 .center[
-<img src="imagenes/largo_palabras.png" width="400" />
+<img src="imagenes/largo_palabras.png" width="600" />
 ]
 
+## Palabras más largas
+
 ---
-
-
 background-image: url("imagenes/fondo2.PNG")
 background-size: contain;
 background-position: 100% 0%
 
 # Cambios en el registro
 
---
 
 - Glosas más cortas
 
