@@ -512,11 +512,11 @@ background-position: 100% 0%
 
 --
 
-La prueba para cualquier algoritmo el desempeño en datos que nunca ha visto
+La prueba para cualquier algoritmo es el desempeño en datos que nunca ha visto
 
 --
 
-Contamos con datos (1200 aproximadamente) etiquetados de abril 2020 para CAENES
+Contamos con datos (1200 aproximadamente) etiquetados de abril 2020 para CAENES (Actividad Económica)
 
 ---
 background-image: url("imagenes/fondo2.PNG")
@@ -853,7 +853,9 @@ Lo más razonable es utilizar una estrategia mixta de codificación
 
 --
 
-Considerar la estrategia de datos sintéticos para clases poco pobladas
+Existe un proyecto que actualmente está estudiando estos temas
+
+**Proyecto Estratégico de Servicios Compartidos**
 
 
 ---
