@@ -115,7 +115,7 @@ background-position: 100% 0%
 
 Contamos con clasificadores para esta tarea
 - CIUO
-- CAENES 
+- CAENES (CIIU para encuestas de hogares)
 - CIIU 
 - CCIF (COICOP)
 
@@ -434,6 +434,8 @@ La prueba para cualquier algoritmo es el desempeño en datos que nunca ha visto
 
 Contamos con datos (1200 aproximadamente) etiquetados de abril 2020 para CAENES (Actividad Económica)
 
+Provienen de una auditoría realizada manualmente
+
 ---
 background-image: url("imagenes/fondo2.PNG")
 background-size: contain;
@@ -664,7 +666,7 @@ Esto es algo positivo, pero introduce desafíos para la codificación
 
 --
 
-**Si los textos levantados mediante tablet han cambiado respecto a los de papel, tendremos problemas en la predicción**
+**Si los textos levantados mediante tablet han cambiado respecto a los de papel, la predicción se dificulta**
 
 
 ---
@@ -760,13 +762,13 @@ Es importante monitorear las transformaciones en el modo de registro
 
 Actualización periódica de los datos de entrenamiento
 
-- Actualmente, nuestro equipo está desarrollando esta tarea
+- Actualmente, nuestra institución se encuentra desarrollando esta tarea
 
-Reoptimización del algoritmo utilizado
+- Reoptimización del algoritmo utilizado
 
 --
 
-Lo más razonable es utilizar una estrategia mixta de codificación 
+Es azonable utilizar una estrategia mixta de codificación 
 
 - Identificar los registros de mayor complejidad 
 
@@ -775,7 +777,7 @@ Lo más razonable es utilizar una estrategia mixta de codificación
 
 --
 
-Existe un proyecto que actualmente está estudiando estos temas
+Existe un proyecto transversal en la institución que actualmente está estudiando estos temas
 
 **Proyecto Estratégico de Servicios Compartidos**
 
