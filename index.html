@@ -4,7 +4,7 @@
     <title>Presentación CEPAL</title>
     <meta charset="utf-8" />
     <meta name="author" content="" />
-    <meta name="date" content="2020-12-14" />
+    <meta name="date" content="2021-01-11" />
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
   <body>
@@ -23,9 +23,11 @@ class: center, middle
 
 ## Experiencia codificación automática INE Chile
 
-## NOMBRE OFICIAL DE LA INSTANCIA DE CONVERSACIÓN
+## Red de transmisión del conocimiento CEPAL
 
-### Diciembre 2020
+## Codificación automatizada
+
+### Enero 2020
 
 
 
@@ -99,8 +101,8 @@ background-position: 100% 0%
 Contamos con clasificadores para esta tarea
 - CIUO
 - CAENES 
-- CIIU
-- CCIF
+- CIIU 
+- CCIF (COICOP)
 
 --
 
@@ -120,34 +122,6 @@ El clasificador CIUO nos dice que esto corresponde al Gran Grupo 9
 --
 
 ## Históricamente, esta tarea ha sido intensiva en trabajo manual
-
----
-background-image: url("imagenes/fondo2.PNG")
-background-size: contain;
-background-position: 100% 0%
-
-# Introducción
-
-Un codificador entrenado lee los textos y los clasifica donde corresponde
-
-.center[
-&lt;img src="imagenes/clasificador.PNG" width="500" /&gt;
-]
-
---
-
-.center[
-&lt;img src="imagenes/pensando_codigo91.png" width="200" /&gt;
-]
-
---
-
-Surgen dos problemas:
-- El proceso toma bastante tiempo (miles de textos)
-
---
-
-- Es muy difícil homologar criterios entre distintas personas
 
 ---
 
@@ -206,11 +180,16 @@ background-position: 100% 0%
 
 # Codificación por reglas
 
+Si están presentes *auxiliar de aseo* y *limpió*, uso el código **91** 
+
+Si está presente *obrero agrícola*, uso el código **92**
+
+--
+
 
 ```r
-if (str_detect(texto, "Auxiliar de aseo") &amp; 
-    str_detect(texto, "Limpió" )) {
-  
+if (str_detect(texto, "auxiliar de aseo") &amp; 
+    str_detect(texto, "limpió" )) {
   codigo &lt;- 91
 }
 ```
@@ -234,7 +213,8 @@ if (str_detect(texto, "obrero agrícola")) {
 
 --
 
-❌ Es muy costo llegar a la totalidad de registros
+❌ Es muy costoso  llegar a la totalidad de los casos
+
 
 ---
 background-image: url("imagenes/fondo2.PNG")
@@ -308,72 +288,11 @@ Edición de las glosas originales
 
 --
 
-El computador no entiende palabras
-
---
-
 Necesitamos representar los textos de manera numérica
 
 --
 
 **Bolsa de palabras (TF-IDF) y Word embeddings**
-
----
-background-image: url("imagenes/fondo2.PNG")
-background-size: contain;
-background-position: 100% 0%
-
-# Representación de los textos 
-
-## Enfoque bag of words (BoW)
-.pull-left[
-
-*Producción de cecinas*
-
-*Producción de perfiles de acero*
-
-Vocabulario = 5
-
-]
-
-.pull-right[
-
-.center[
-&lt;table&gt;
-  &lt;tr&gt;
-    &lt;td&gt;producción&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;de&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;cecinas&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;perfiles&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;acero&lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/table&gt;
-]
-]
-&lt;/br&gt;
-
---
-
-.center[
-  .caja[vector1 = [1, 1, 1, 0, 0]]
-  .caja[vector2 = [1, 2, 0, 1, 1]]
-]
-
---
-
-## Esquema TF-IDF
-
-`\(tf = \frac{totalPalabra_p}{totalPalabras_g}\)` .pull-right[**Importancia dentro de la glosa**]
-
-`\(idf = log{\frac{totalDocumentos}{totalPalabra_p}}\)` .pull-right[**Importancia en todas las glosas**]
 
 ---
 background-image: url("imagenes/fondo2.PNG")
@@ -405,7 +324,7 @@ background-position: 100% 0%
 
 Pensemos en las siguientes glosas de actividad económica:
 
-- *elaboración vienesas*
+- *elaboración vienesas* (expresión chilena)
 
 - *fabricación salchichas*
 
@@ -462,23 +381,14 @@ Varias alternativas:
 
 
 ```
-##                  [,1]      [,2]       [,3]       [,4]       [,5]
-## extraccion  0.3702166 0.1011862  0.4417071  0.7376205  0.9136684
-## produccion -0.2730550 0.6550913  0.8797540 -0.2227063 -0.2374731
-## cobre      -0.1660812 0.8427657 -0.8342750  0.2183069  0.6219572
+##                  [,1]       [,2]        [,3]       [,4]        [,5]
+## extraccion -0.5751817 -0.2462383 -0.52467495  0.2593409 -0.25964568
+## produccion -0.5335788  0.4341379 -0.31298007 -0.2487755  0.14908232
+## cobre      -0.3187003 -0.9159241  0.01197721 -0.8616791  0.02440576
 ```
 
-```
-## [1] -0.2730550  0.1011862 -0.8342750 -0.2227063 -0.2374731
-```
 
-```
-## [1] 0.3702166 0.8427657 0.8797540 0.7376205 0.9136684
-```
-
---
-
-## Hemos utilizado las 2 primeras alternativas
+## Estamos utilizando mínimos y máximos
 
 ---
 background-image: url("imagenes/fondo2.PNG")
@@ -528,7 +438,7 @@ background-position: 100% 0%
 
 # Resultados CCIF 
 
-La Encuesta de Presupuestos Familiares (EPF) utiliza un clasificador llamado CCIF, que tiene más de 1.000 categorías
+La Encuesta de Presupuestos Familiares (EPF) utiliza un clasificador llamado CCIF (COICOP), que tiene más de 1.000 categorías
 
 
 &lt;img src="presentacion_cepal_files/figure-html/unnamed-chunk-4-1.png" style="display: block; margin: auto;" /&gt;
@@ -564,6 +474,10 @@ background-position: 100% 0%
 
 ### Estrategia mixta: parte automática y parte manual
 
+--
+
+### ¿Cómo puedo elegir qué registros debo codificar manualmente?
+
 ---
 
 background-image: url("imagenes/fondo2.PNG")
@@ -579,7 +493,7 @@ background-position: 100% 0%
 
 Receta:
 
-- **paso 1:** Rankear los registros de mayor a menor dificultad
+- **paso 1:** Rankear los registros de mayor a menor dificultad (probabilidad asignada por la red)
 
 --
 
@@ -738,7 +652,9 @@ Existe espacio para implementar nuevas mejoras en el proceso
 
 Es importante monitorear las transformaciones en el modo de registro
 
-Actualización constante de los datos de entrenamiento
+Actualización periódica de los datos de entrenamiento
+
+- Actualmente, nuestro equipo está desarrollando esta tarea
 
 Reoptimización del algoritmo utilizado
 
@@ -766,14 +682,13 @@ class: center, middle
 .linea-inferior[]
 &lt;img src="imagenes/logo_portada2.png" width="200" /&gt;
 
+## Experiencia codificación automática INE Chile
 
-## Capacitación en R y herramientas de productividad
+## Red de transmisión del conocimiento CEPAL
 
-## Proyecto Estratégico Servicios Compartidos para la Producción Estadística
+## Codificación automatizada
 
-## Funciones y estilo de código
-
-### Septiembre 2020
+### Enero 2020
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
