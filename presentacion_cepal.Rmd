@@ -760,15 +760,15 @@ Existe espacio para implementar nuevas mejoras en el proceso
 
 Es importante monitorear las transformaciones en el modo de registro
 
+--
+
 Actualización periódica de los datos de entrenamiento
 
 - Actualmente, nuestra institución se encuentra desarrollando esta tarea
 
-- Reoptimización del algoritmo utilizado
-
 --
 
-Es azonable utilizar una estrategia mixta de codificación 
+Es razonable utilizar una estrategia mixta de codificación 
 
 - Identificar los registros de mayor complejidad 
 
