@@ -84,7 +84,7 @@ Algunos datos levantados en el marco de la producción estadística corresponden
 
 --
 
-Estos datos deben ser clasificados, para que sean útiles desde el punto de vista estadístico 
+Estos datos deben ser codificados, para que sean útiles desde el punto de vista estadístico 
 
 --
 
