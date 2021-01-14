@@ -97,7 +97,7 @@ Estos datos deben ser codificados, para que sean útiles desde el punto de vista
 --
 
 .center[
-## ¿Cómo se realiza la tarea de clasificación?
+## ¿Cómo se realiza la tarea de codificación?
 
 <img src="imagenes/pensando.png" width="200" />
 
